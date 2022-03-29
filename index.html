@@ -6,24 +6,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Develop/css/style.css">
-    <title>Air Pollution</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+
+    <title>Pollution Mapping</title>
 </head>
 
 <body>
-    <header>
-        <h1>Open Console Log to view data!</h1>
-    </header>
-    <button type="button" id="button">Submit</button>
-    <div id="test-data">
-        <ul id="component-data"></ul>
+    <div id="side-panel">
+        <header>
+            <h1>Open Console Log to view data!</h1>
+        </header>
+        <button type="button" id="button">Submit</button>
+        <div id="test-data">
+            <ul id="component-data"></ul>
+        </div>
     </div>
 
-
     <script src="./Develop/js/script.js"></script>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+        }
+        #map {
+            height: 100vh;
+            width: 80%;
+        }
+        #side-panel {
+            width: 20%;
+        }
+    </style>
 
     <!-- map API here -->
+    <div id='map'></div>
     <script src=""></script>
     <script src="./Develop/js/air-quality.js"></script>
+    <script src="./Develop/js/map.js" defer></script>
 </body>
 
-</html>
+</html> 

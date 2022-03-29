@@ -8,13 +8,13 @@ var airQuality = {};
 
 function buttonSubmitHandler(event) {
     event.preventDefault();
-    var lat = 34.12145650683996;
-    var lon = -118.31018306051159;
 
     var airQualityVar = getAirQuality(lat, lon);
     console.log(airQualityVar);
 }
 function getAirQuality(lat, lon) {
+    console.log(lat);
+    console.log(lon);
     var airPollutionUrl = 'http://api.openweathermap.org/data/2.5/air_pollution?lat=' + lat + '&lon=' + lon + '&appid=4ce1081bbd0cd6d45033a1dc8f18bcdf';
 
     fetch(airPollutionUrl)
