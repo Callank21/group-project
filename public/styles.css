@@ -502,7 +502,45 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
-.bg-zinc-300 {
+.inline {
+  display: inline;
+}
+
+.h-10 {
+  height: 2.5rem;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.bg-slate-300 {
   --tw-bg-opacity: 1;
-  background-color: rgb(212 212 216 / var(--tw-bg-opacity));
+  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+}
+
+.bg-slate-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.content {
+  padding: 0 3% 0 3%;
+}
+
+.img {
+  padding: 0 5% 0 5%;
 }
