@@ -59,4 +59,3 @@ function displayError(error) {
     return error;
 }
 
-submitButton.addEventListener("click", buttonSubmitHandler);
