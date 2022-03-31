@@ -1,4 +1,4 @@
-var aqiDef = ["good", "fair", "moderate", "poor", "very poor"];
+var aqiDef = ["Good", "Fair", "Moderate", "Poor", "Very Poor"];
 
 var dataEl = document.querySelector('#test-data');
 var componentsEl = dataEl.querySelector('#component-data');
