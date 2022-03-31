@@ -5,7 +5,6 @@ module.exports = {
       backgroundImage:{
         bhHero:"url('./Develop/imgs/ezgif.com-gif-maker.gif')"
       },
-
     },
   },
   plugins: [],
