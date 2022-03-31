@@ -457,17 +457,27 @@ Ensure the default browser behavior of the `hidden` attribute.
     max-width: 1536px;
   }
 }
+.fixed {
+  position: fixed;
+}
 .absolute {
   position: absolute;
 }
-.relative {
-  position: relative;
+.inset-x-0 {
+  left: 0px;
+  right: 0px;
 }
 .top-20 {
   top: 5rem;
 }
 .top-40 {
   top: 10rem;
+}
+.bottom-0 {
+  bottom: 0px;
+}
+.m-60 {
+  margin: 15rem;
 }
 .m-80 {
   margin: 20rem;
@@ -483,6 +493,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.mt-6 {
+  margin-top: 1.5rem;
+}
 .inline {
   display: inline;
 }
@@ -492,14 +509,32 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-10 {
   height: 2.5rem;
 }
+.h-screen {
+  height: 100vh;
+}
+.h-px {
+  height: 1px;
+}
+.w-full {
+  width: 100%;
+}
+.max-w-2xl {
+  max-width: 42rem;
+}
 .cursor-pointer {
   cursor: pointer;
+}
+.flex-col {
+  flex-direction: column;
 }
 .items-center {
   align-items: center;
 }
 .justify-center {
   justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
 }
 .rounded {
   border-radius: 0.25rem;
@@ -510,20 +545,26 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border {
   border-width: 1px;
 }
+.border-none {
+  border-style: none;
+}
 .border-blue-500 {
   --tw-border-opacity: 1;
   border-color: rgb(59 130 246 / var(--tw-border-opacity));
-}
-.bg-gray-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
 .bg-cyan-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(6 182 212 / var(--tw-bg-opacity));
 }
+.bg-gray-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+}
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+.bg-bhHero {
+  background-image: url('./Develop/ezgif.com-gif-maker.gif');
 }
 .from-cyan-500 {
   --tw-gradient-from: #06b6d4;
@@ -532,8 +573,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .to-blue-500 {
   --tw-gradient-to: #3b82f6;
 }
-.p-5 {
-  padding: 1.25rem;
+.bg-center {
+  background-position: center;
+}
+.p-3 {
+  padding: 0.75rem;
 }
 .py-3 {
   padding-top: 0.75rem;
@@ -547,13 +591,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 5rem;
   padding-right: 5rem;
 }
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
 }
 .text-3xl {
   font-size: 1.875rem;
@@ -563,12 +610,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 3rem;
   line-height: 1;
 }
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
 .font-bold {
   font-weight: 700;
+}
+.text-blue-600 {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
 }
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.drop-shadow-lg {
+  --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .duration-500 {
   transition-duration: 500ms;
@@ -606,6 +665,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:flex {
     display: flex;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
   }
 
   .md\:items-center {

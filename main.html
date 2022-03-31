@@ -8,37 +8,37 @@
     <link rel="stylesheet" href="./public/style.css">
     <title>Welcome</title>
 </head>
-<body class="bg-gray-300">
+<body class="bg-gradient-to-r from-cyan-500 to-blue-500 ">
     <header>
         
-        <nav class="p-5 bg-gradient-to-r from-cyan-500 to-blue-500 md:flex md:items-center md:justify-between">
-            <span class="text-2xl font-Poppins font-bold cursor-pointer"><img class="h-10 inline" src="./Develop/imgs/pngwing.com.png" alt="co2"> Air Pollution</span>
+        <nav class="p-3 bg-gradient-to-r from-cyan-500 to-blue-500 flex flex-col items-center justify-between mt-6 md:flex-row">
+            <span class="text-4xl font-Poppins font-bold cursor-pointer"><img class="h-10 inline" src="./Develop/imgs/pngwing.com.png" alt="co2"> Air Pollution</span>
             
             <ul class="md:flex md:items-center">
                 <li class="mx-4 my-6 md:my-0">
-                    <a href="#stayInformed" class="text-xl hover:text-cyan-500 duration-500">Stay Informed</a>
+                    <a href="#stayInformed" class="text-2xl hover:text-cyan-500 duration-500">Stay Informed</a>
                 </li>
                 <li class="mx-4 my-6 md:my-0">
-                    <a href="#aboutUs" class="text-xl hover:text-cyan-500 duration-500">About Us</a>
+                    <a href="#aboutUs" class="text-2xl hover:text-cyan-500 duration-500">About Us</a>
                 </li>
             </ul>
         </nav>
     </header>
 
     <div class="content">
-        <div class="img relative">
-                       
+        <div class="img relative ">
             <div class="inBtn flex items-center justify-center">
                
-                <img src="./Develop/imgs/ezgif.com-gif-maker.gif" width="100%" 
-            height="" alt="Air Pollution">
-
                 <p class="text-3xl font-bold absolute top-20 m-60 text-blue-600 drop-shadow-lg">How's the Air Quality Near You?</p>
 
 
-                <input class="flex text-2xl absolute top-20 m-80 font-bold py-3 px-36 rounded focus:outline-none focus:shadow-outline border border-blue-500" type="text" placeholder="ZIP Code, City, or State">
+                <input class="text-lg absolute top-20 m-80 font-bold py-3  rounded focus:outline-none focus:shadow-outline border border-blue-500 text-center" type="text" placeholder=" ZIP Code or City">
 
-                <button class="flex text-2xl absolute top-40 m-80 bg-cyan-500 hover:bg-blue-500 text-white font-bold py-3 px-20 rounded-full focus:outline-none focus:shadow-outline" onclick="window.location.href = './index.html';" type="button" id="button">Submit</button>
+                <button class="ext-2xl absolute top-40 m-80 bg-cyan-500 hover:bg-blue-500 text-white font-bold py-3 px-20 rounded-full focus:outline-none focus:shadow-outline" onclick="window.location.href = './index.html';" type="button" id="button">Submit</button>
+
+                <img class="m-6" src="./Develop/imgs/ezgif.com-gif-maker.gif" width="100%" 
+                height="" alt="Air Pollution">
+                
             </div>
         </div>
 
@@ -51,10 +51,34 @@
 
         <div class="stayInformed">
             <h1 class="text-5xl font-Poppins font-bold flex items-center justify-center m-4">Stay Informed</h1>
-
         </div>
 
     </div>
+
+    <footer class=" pb-2 fixed bottom-0 w-full inset-x-0 bottom-0p-5 bg-gradient-to-r from-cyan-500 to-blue-500">
+        <div class="max-w-2xl mx-auto">
+
+            <hr class="h-px mt-6 bg-gray-700 border-none">
+    
+            <div class="flex flex-col items-center justify-between mt-6 md:flex-row">
+                <div>
+                    <a href="#"><span class="text-2xl font-Poppins font-bold cursor-pointer"><img class="h-10 inline" src="./Develop/imgs/pngwing.com.png" alt="co2"> Air Pollution</span></a>
+                </div>
+    
+                <ul class="md:flex md:items-center">
+                    <li class="mx-4 my-6 md:my-0">
+                        <a href="#stayInformed" class="text-xl hover:text-cyan-500 duration-500">Stay Informed</a>
+                    </li>
+                    <li class="mx-4 my-6 md:my-0">
+                        <a href="#aboutUs" class="text-xl hover:text-cyan-500 duration-500">About Us</a>
+                    </li>
+                </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 
     <script src="./Develop/js/air-quality.js"></script>
 </body>
