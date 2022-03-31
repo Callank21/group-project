@@ -8,4 +8,21 @@
 
 .img {
     padding: 0 15% 0 15%;
+   
+}
+
+.img-hover {
+    position: absolute;
+    padding-top: ;
+    top: 0;
+    opacity: 0;
+    transition: all 0.7s ease;
+}
+
+.img-hover:hover {
+    opacity: 1;   
+}
+
+#map {
+    width: 100%;
 }

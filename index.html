@@ -14,36 +14,52 @@
 </head>
 
 <body class="bg-gradient-to-r from-cyan-500 to-blue-500 ">
-    <div id="side-panel">
+    <div class="content">
+        <!-- Header -->
         <header>
-            <h1>Open Console Log to view data!</h1>
+            <!-- Navbar -->
+            <nav class="pl-3 pr-3 bg-gradient-to-r from-cyan-500 to-blue-500 flex flex-col items-center justify-between mt-2 md:flex-row">
+                <span class="text-4xl font-Poppins font-bold drop-shadow-xl"><img class="h-10 inline drop-shadow-xl" src="./Develop/imgs/pngwing.com.png" alt="co2"><a class="hover:text-cyan-400 duration-500 drop-shadow-xl" href="main.html"> Air Pollution</a> </span>
+                <!-- Nav Ul -->
+                <ul class="md:flex md:items-center">
+                    <li class="mx-1 my-4 md:my-4">
+                        <a href="#stayInformed" class="text-2xl hover:text-cyan-400 duration-500">Stay Informed</a>
+                    </li>
+                    <li class="mx-7 my-3 md:my-4">
+                        <a href="#aboutUs" class="text-2xl hover:text-cyan-400 duration-500">About Us</a>
+                    </li>
+                </ul>
+            </nav>
         </header>
-        <button type="button" id="button">Submit</button>
-        <div id="test-data">
-            <ul id="component-data"></ul>
+
+        <div id="side-panel">
+            <header>
+                <h1>Open Console Log to view data!</h1>
+            </header>
+            <button type="button" id="button">Submit</button>
+            <div id="test-data">
+                <ul id="component-data"></ul>
+            </div>
         </div>
+
+        <script src="./Develop/js/script.js"></script>
+        <style>
+        
+            #map {
+                height: 100vh;
+                width: 80%;
+            }
+            #side-panel {
+                width: 20%;
+            }
+        </style>
+
+        <!-- map API here -->
+        <div id='map'></div>
+        <script src=""></script>
+        <script src="./Develop/js/air-quality.js"></script>
+        <script src="./Develop/js/map.js" defer></script>
     </div>
-
-    <script src="./Develop/js/script.js"></script>
-    <style>
-        body {
-            margin: 0;
-            display: flex;
-        }
-        #map {
-            height: 100vh;
-            width: 80%;
-        }
-        #side-panel {
-            width: 20%;
-        }
-    </style>
-
-    <!-- map API here -->
-    <div id='map'></div>
-    <script src=""></script>
-    <script src="./Develop/js/air-quality.js"></script>
-    <script src="./Develop/js/map.js" defer></script>
 </body>
 
 </html> 
