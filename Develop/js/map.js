@@ -1,6 +1,4 @@
 var submitButton = document.querySelector("#button");
-mapboxgl.accessToken = 'pk.eyJ1IjoiY2FsbGFuazIxIiwiYSI6ImNsMWJiZnA0cjJyMG0zam4xMTF6MHdndmYifQ.lZAx_bYFPQmZDlkT3b8Daw';
-
 
 function searchQuery(query) {
     query.replace(' ', '%20');
@@ -25,6 +23,7 @@ function searchQuery(query) {
 
 
 function setUpMap(lat, lon) {
+            mapboxgl.accessToken = 'pk.eyJ1IjoiY2FsbGFuazIxIiwiYSI6ImNsMWJiZnA0cjJyMG0zam4xMTF6MHdndmYifQ.lZAx_bYFPQmZDlkT3b8Daw';
             getAirQuality(lon, lat);
             const map = new mapboxgl.Map({
                 container: 'map', // container ID
@@ -35,8 +34,7 @@ function setUpMap(lat, lon) {
 }
 
 submitButton.addEventListener("click", function() {
-    console.log("go");
-    var query = document.getElementById("query").value;
+    var query = document.getElementById("input").value;
     if (query) {
         searchQuery(query);
     }
