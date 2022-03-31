@@ -8,14 +8,15 @@ var airQuality = {};
 
 function buttonSubmitHandler(event) {
     event.preventDefault();
-    var lat = 34.12145650683996;
-    var lon = -118.31018306051159;
+    var lat = 33.94974;
+    var lon = -116.955765;
 
     var airQualityVar = getAirQuality(lat, lon);
     console.log(airQualityVar);
 }
 function getAirQuality(lat, lon) {
     var airPollutionUrl = 'http://api.openweathermap.org/data/2.5/air_pollution?lat=' + lat + '&lon=' + lon + '&appid=4ce1081bbd0cd6d45033a1dc8f18bcdf';
+
 
     fetch(airPollutionUrl)
         .then(function (response) {
@@ -33,13 +34,16 @@ function getAirQuality(lat, lon) {
 }
 
 function displayData(data) {
+    var qualityEl = document.createElement('h2');
+    var asciiChar = document.createElement("span");
+    var componentEl = document.createElement('li');
+
     for (let i = 0; i < data.list.length; i++) {
         airQuality.quality = (aqiDef[data.list[i].main.aqi - 1]);
         airQuality.components = data.list[i].components;
 
-        var qualityEl = document.createElement('h2');
         qualityEl.textContent = airQuality.quality;
-        var componentEl = document.createElement('li');
+
         componentEl.innerHTML =
             "<li><span> CO:</span> " + airQuality.components.co + "</li>" +
             "<li><span> NO:</span> " + airQuality.components.no + "</li>" +
@@ -50,6 +54,9 @@ function displayData(data) {
             "<li><span> PM<sub>10</sub>:</span> " + airQuality.components.pm10 + "</li>" +
             "<li><span> NH<sub>3</sub>:</span> " + airQuality.components.nh3 + "</li>";
 
+        asciiChar.innerHTML = "<p> Units are in " + String.fromCharCode(181) + "g/m<sup>3</sup>";
+
+        dataEl.prepend(asciiChar);
         dataEl.prepend(qualityEl);
         componentsEl.appendChild(componentEl);
     }
