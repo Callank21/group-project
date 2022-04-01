@@ -12,12 +12,11 @@
     <!-- Header -->
     <header>
         <!-- Navbar -->
-        <nav class="pl-3 pr-3 bg-gradient-to-r from-cyan-500 to-blue-500 flex flex-col items-center justify-between mt-2 md:flex-row">
+        <nav class="pl-3 pr-3 bg-gradient-to-r from-cyan-500 to-blue-500 flex flex-col items-center justify-between mt-0 md:flex-row">
             <span class="text-4xl font-Poppins font-bold drop-shadow-xl"><img class="h-10 inline drop-shadow-xl" src="./Develop/imgs/pngwing.com.png" alt="co2"><a class="hover:text-cyan-400 duration-500 drop-shadow-xl" href="main.html"> Air Pollution</a> </span>
-            
             <!-- Nav Ul -->
             <ul class="md:flex md:items-center">
-                <li class="mx-1 my-4 md:my-4">
+                <li class="mx-4 my-0 md:my-0">
                     <a href="#stayInformed" class="text-2xl hover:text-cyan-400 duration-500">Stay Informed</a>
                 </li>
                 <li class="mx-7 my-3 md:my-4">
@@ -40,22 +39,18 @@
             </div>
 
             <!--right Col / Search Funtion-->
-            <div class="flex flex-col w-full lg:w-1/2 justify-center items-start pt-2 pb-5 px-6">
+            <div class="flex flex-col w-full lg:w-1/2 justify-center items-start pt-2 pb-5 pl-16 px-6">
                 <p class="uppercase tracking-loose">AIR POLLUTION</p>
                 
                 <h1 class="font-bold text-3xl my-4 mt-4">How's the Air Quality Near You?</h1>
+             <form action="index.html">  
+                <input id="input" class="g-gray-200 text-center text-gray-700 border border-gray-200 rounded py-2 px-5 my-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 " type="text" placeholder="ZIP Code or City"> <br>
                 
-                <input id="input" class="g-gray-200 text-center text-gray-700 border border-gray-200 rounded py-2 px-5 my-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="ZIP Code or City">
-                
-                <button class="bg-transparent hover:bg-gray-900 duration-500 text-gray-900 hover:text-white rounded hover:shadow-lg py-2 px-4 border border-gray-900 hover:border-transparent mt-4 shadow-2xl" onclick="window.location.href = './index.html';" type="button" id="button">Submit</button>
+                <button class="bg-transparent hover:bg-gray-900 duration-500 text-gray-900 hover:text-white rounded hover:shadow-lg py-2 px-4 border border-gray-900 hover:border-transparent mt-4 shadow-2xl" onclick="window.location.href = './index.html';" type="submit" id="button">Submit</button>
+            </form>
             </div>       
         </div>
 
-        <div>
-            <div id="test-data">
-                <ul id="component-data"></ul>
-            </div>
-        </div>
 
         <!-- Stay Informed Portion -->
         <div class="stayInformed">
