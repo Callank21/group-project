@@ -1,8 +1,57 @@
+var submitButton = document.querySelector("#button");
+
+var previousSearches = [];
+
+function searchQuery(query) {
+    query.replace(' ', '%20');
+    var location = `https://api.mapbox.com/geocoding/v5/mapbox.places/${query}.json?proximity=ip&types=place%2Cpostcode%2Caddress&access_token=pk.eyJ1IjoiY2FsbGFuazIxIiwiYSI6ImNsMWJiZnA0cjJyMG0zam4xMTF6MHdndmYifQ.lZAx_bYFPQmZDlkT3b8Daw`;
+    var lat;
+    var lon;
+    fetch(location)
+        .then(function (response) {
+            console.log(response)
+            response.json()
+                .then(function (response) {
+                    console.log(response)
+                    coordinates = response.features[0].geometry.coordinates;
+                    lat = coordinates[0];
+                    lon = coordinates[1];
+                    console.log(lat);
+                    console.log(lon);
+                    setUpMap(lat, lon);
+                })
+        })
+}
+
+function setUpMap(lat, lon) {
+    mapboxgl.accessToken = 'pk.eyJ1IjoiY2FsbGFuazIxIiwiYSI6ImNsMWJiZnA0cjJyMG0zam4xMTF6MHdndmYifQ.lZAx_bYFPQmZDlkT3b8Daw';
+    getAirQuality(lon, lat);
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [lat, lon], // starting position [lng, lat]
+        zoom: 10 // starting zoom  
+    });
+}
+
+submitButton.addEventListener("click", function () {
+    var query = document.getElementById("input").value;
+    if (query) {
+        searchQuery(query);
+    }
+    else {
+        searchQuery("los angeles");
+    }
+});
+
+
+
+// Start of Air Pollution API
+
 var aqiDef = ["good", "fair", "moderate", "poor", "very poor"];
 
 var dataEl = document.querySelector('#test-data');
 var componentsEl = dataEl.querySelector('#component-data');
-var submitButton = document.querySelector('#button');
 
 var qualityEl = document.querySelector('#air-quality');
 
@@ -10,8 +59,6 @@ var airQuality = {};
 
 function buttonSubmitHandler(event) {
     event.preventDefault();
-    var lat = 33.94974;
-    var lon = -116.955765;
 
     var airQualityVar = getAirQuality(lat, lon);
     console.log(airQualityVar);
@@ -59,4 +106,3 @@ function displayData(data) {
 function displayError(error) {
     return error;
 }
-
