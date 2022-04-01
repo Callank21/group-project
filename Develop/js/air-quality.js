@@ -4,6 +4,8 @@ var dataEl = document.querySelector('#test-data');
 var componentsEl = dataEl.querySelector('#component-data');
 var submitButton = document.querySelector('#button');
 
+var qualityEl = document.querySelector('#air-quality');
+
 var airQuality = {};
 
 function buttonSubmitHandler(event) {
@@ -34,17 +36,13 @@ function getAirQuality(lat, lon) {
 }
 
 function displayData(data) {
-    var qualityEl = document.createElement('h2');
-    var asciiChar = document.createElement("span");
-    var componentEl = document.createElement('li');
-
     for (let i = 0; i < data.list.length; i++) {
         airQuality.quality = (aqiDef[data.list[i].main.aqi - 1]);
         airQuality.components = data.list[i].components;
 
         qualityEl.textContent = airQuality.quality;
 
-        componentEl.innerHTML =
+        var componentHtml =
             "<li><span> CO:</span> " + airQuality.components.co + "</li>" +
             "<li><span> NO:</span> " + airQuality.components.no + "</li>" +
             "<li><span> NO<sub>2</sub>:</span> " + airQuality.components.no2 + "</li>" +
@@ -54,11 +52,7 @@ function displayData(data) {
             "<li><span> PM<sub>10</sub>:</span> " + airQuality.components.pm10 + "</li>" +
             "<li><span> NH<sub>3</sub>:</span> " + airQuality.components.nh3 + "</li>";
 
-        asciiChar.innerHTML = "<p> Units are in " + String.fromCharCode(181) + "g/m<sup>3</sup>";
-
-        dataEl.prepend(asciiChar);
-        dataEl.prepend(qualityEl);
-        componentsEl.appendChild(componentEl);
+        componentsEl.innerHTML = componentHtml;
     }
 }
 
