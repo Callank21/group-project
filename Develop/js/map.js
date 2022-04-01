@@ -34,6 +34,8 @@ function setUpMap(lat, lon) {
             }); 
 }
 
+
+
 submitButton.addEventListener("click", function() {
     console.log("go");
     var query = document.getElementById("query").value;
