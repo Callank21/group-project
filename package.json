@@ -1,0 +1,23 @@
+{
+  "name": "group-project",
+  "version": "1.0.0",
+  "description": "Javascript is cool because I get to mess with websites",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwind build -i Develop/css/style.css -o public/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Callank21/group-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Callank21/group-project/issues"
+  },
+  "homepage": "https://github.com/Callank21/group-project#readme",
+  "dependencies": {
+    "tailwindcss": "^3.0.23"
+  }
+}

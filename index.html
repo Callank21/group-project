@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Develop/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+
+    <title>Pollution Mapping</title>
+</head>
+
+<body class="bg-gradient-to-r from-cyan-500 to-blue-500 ">
+    <div class="content">
+        <!-- Header -->
+        <header>
+            <!-- Navbar -->
+            <nav class="pl-3 pr-3 bg-gradient-to-r from-cyan-500 to-blue-500 flex flex-col items-center justify-between mt-0 md:flex-row">
+                <span class="text-4xl font-Poppins font-bold drop-shadow-xl"><img class="h-10 inline drop-shadow-xl" src="./Develop/imgs/pngwing.com.png" alt="co2"><a class="hover:text-cyan-400 duration-500 drop-shadow-xl" href="main.html"> Air Pollution</a> </span>
+                <!-- Nav Ul -->
+                <ul class="md:flex md:items-center">
+                    <li class="mx-4 my-0 md:my-0">
+                        <a href="#stayInformed" class="text-2xl hover:text-cyan-400 duration-500">Stay Informed</a>
+                    </li>
+                    <li class="mx-7 my-3 md:my-4">
+                        <a href="#aboutUs" class="text-2xl hover:text-cyan-400 duration-500">About Us</a>
+                    </li>
+                </ul>
+            </nav>
+            <hr class="h-px mt-0 bg-gray-500 opacity-40 border-none">
+        </header>
+
+
+        <script src="./Develop/js/script.js"></script>
+        
+        <!-- Map API here -->
+        <div class="container mx-auto flex flex-col md:flex-row items-center my-0 md:my-16 ">
+            <div class="w-full lg:w-1/2 lg:py-14 text-center">
+                <div id='map' class="h-96 w-full rounded-lg shadow-2xl"></div>
+            </div>
+        
+            <!-- Side Panel -->
+            <div id="side-panel" class=" w-full lg:w-1/2 lg:py-0 text-center">
+                <header>
+                    <h1>Open Console Log to view data!</h1>
+                </header>
+                <form action="index.html">  
+                    <input id="input" class="g-gray-200 text-center text-gray-700 border border-gray-200 rounded py-2 px-5 my-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="ZIP Code or City">
+                    
+                    <button class="bg-transparent hover:bg-gray-900 duration-500 text-gray-900 hover:text-white rounded hover:shadow-lg py-2 px-4 border border-gray-900 hover:border-transparent mt-4 shadow-2xl" onclick="window.location.href = './index.html';" type="submit" id="button">Submit</button>
+                </form>
+
+                <div id="test-data">
+                    <ul id="component-data" class=""></ul>
+                </div>
+            </div>
+
+        </div>
+
+    <!-- Footer -->
+    <footer class=" pb-0 fixed bottom-0 w-full inset-x-0 bottom-0p-5 bg-gradient-to-r from-cyan-500 to-blue-500">
+        <div class="max-w-2xl mx-auto">
+
+            <hr class="h-px mt-0 bg-gray-500 opacity-40 border-none">
+    
+            <div class="flex flex-col items-center justify-between mt-3 md:flex-row">
+                <div>
+                    <a href="#"><span class="text-2xl font-Poppins font-bold cursor-pointer"><img class="h-10 inline mr-3" src="./Develop/imgs/pngwing.com.png" alt="co2">Air Pollution</span></a>
+                </div>
+    
+                <ul class="md:flex md:items-center">
+                    <li class="mx-4 my-0 md:my-0">
+                        <a href="#stayInformed" class="text-xl hover:text-cyan-400 duration-500">Stay Informed</a>
+                    </li>
+                    <li class="mx-7 my-0 md:my-0">
+                        <a href="#aboutUs" class="text-xl hover:text-cyan-400 duration-500">About Us</a>
+                    </li>
+                </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+        <script src=""></script>
+        <script src="./Develop/js/air-quality.js"></script>
+        <script src="./Develop/js/map.js" defer></script>
+    </div>
+</body>
+
+</html> 
+
