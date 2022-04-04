@@ -1,6 +1,5 @@
 var submitButton = document.querySelector("#button");
-
-var previousSearches = [];
+var submit = document.getElementById("submit");
 
 function searchQuery(query) {
     query.replace(' ', '%20');
@@ -34,16 +33,32 @@ function setUpMap(lat, lon) {
     });
 }
 
-submitButton.addEventListener("click", function () {
-    var query = document.getElementById("input").value;
-    if (query) {
-        searchQuery(query);
-    }
-    else {
-        searchQuery("los angeles");
-    }
-});
+if(submit) {
+    submit.addEventListener("click", function () {
+        var search = document.getElementById("search").value;
+        var previousSearches = [];
+        previousSearches.push(search);
+        localStorage.setItem("drop-down", JSON.stringify(previousSearches));
+    });
+}
 
+if(submitButton) {
+    submitButton.addEventListener("click", function () {
+        var query = document.getElementById("input").value;
+        if (query) {
+            searchQuery(query);
+        }
+        else {
+            searchQuery("los angeles");
+        }
+    });
+}
+
+var previousSearches = JSON.parse(localStorage.getItem("drop-down"));
+
+
+console.log(previousSearches);
+searchQuery(previousSearches[0]);
 
 
 // Start of Air Pollution API
