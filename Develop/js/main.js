@@ -8,23 +8,20 @@ function searchQuery(query) {
     var lon;
     fetch(location)
         .then(function (response) {
-            console.log(response)
             response.json()
                 .then(function (response) {
-                    console.log(response)
                     coordinates = response.features[0].geometry.coordinates;
                     lat = coordinates[0];
                     lon = coordinates[1];
-                    console.log(lat);
-                    console.log(lon);
                     setUpMap(lat, lon);
+
+                    getAirQuality(lon, lat);
                 })
         })
 }
 
 function setUpMap(lat, lon) {
     mapboxgl.accessToken = 'pk.eyJ1IjoiY2FsbGFuazIxIiwiYSI6ImNsMWJiZnA0cjJyMG0zam4xMTF6MHdndmYifQ.lZAx_bYFPQmZDlkT3b8Daw';
-    getAirQuality(lon, lat);
     const map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
@@ -72,19 +69,11 @@ var qualityEl = document.querySelector('#air-quality');
 
 var airQuality = {};
 
-function buttonSubmitHandler(event) {
-    event.preventDefault();
-
-    var airQualityVar = getAirQuality(lat, lon);
-    console.log(airQualityVar);
-}
 function getAirQuality(lat, lon) {
     var airPollutionUrl = 'http://api.openweathermap.org/data/2.5/air_pollution?lat=' + lat + '&lon=' + lon + '&appid=4ce1081bbd0cd6d45033a1dc8f18bcdf';
 
-
     fetch(airPollutionUrl)
         .then(function (response) {
-            console.log(response);
             if (response.ok) {
                 response.json().then(function (data) {
                     displayData(data);
