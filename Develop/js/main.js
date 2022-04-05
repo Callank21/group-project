@@ -1,4 +1,4 @@
-var submitButton = document.querySelector("#button");
+var submitButton = document.querySelector("#polCheck");
 var submit = document.getElementById("submit");
 
 function searchQuery(query) {

@@ -1,122 +1,178 @@
-<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Develop/css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
-
-    <title>Pollution Mapping</title>
+    <link rel="stylesheet" href="./Develop/css/style.css">
+    <link rel="stylesheet" href="./public/style.css">
+    <title>Welcome</title>
 </head>
-
-<body class="bg-white">
-    <div class="content">
-        <!-- Header -->
-        <header class="w-full">
-            <!-- Navbar -->
-            
-            <nav class="w-full drop-shadow-md justify-between border-y-4 border-teal-100 pl-8 bg-gradient-to-b from-sky-600 to-sky-300 flex flex-col items-center  mt-0 md:flex-row">
-                <span class="font-Poppins drop-shadow-xl"><img class="h-8 inline drop-shadow-xl" src="./Develop/imgs/pngwing.com.png" alt="co2"><a class="text-teal-100 font-bold text-2xl duration-500 drop-shadow-xl underline " href="main.html"> AirPollution.com</a> </span>
-                <!-- Nav Ul -->
-                <ul class="md:flex md:items-center">
-                    <li class="m-2">
-                        <a href="#about" class="flex text-white bg-sky-500 border-white justify-end duration-500 text-md font-bold transform hover:scale-125 border-2 hover:bg-gray-300 rounded-full py-1 px-3 hover:shadow-lx hover:border-cyan-400 hover:text-cyan-400">About
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 stroke-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                              </svg>
-                        </a>
-                    </li>
-                    <li class="m-2">
-                        <a href="#pollution" class="flex text-white bg-sky-500 border-white justify-end duration-500 text-md font-bold transform hover:scale-125 border-2 hover:bg-gray-300 rounded-full py-1 px-3 hover:shadow-lx hover:border-cyan-400 hover:text-cyan-400">Pollutons
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 stroke-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>                    
-                        </a>
-                      <li class="m-2">
-                        <a href="#index" class="flex text-white bg-sky-500 border-white justify-end duration-500 text-md font-bold transform hover:scale-125 border-2 hover:bg-gray-300 rounded-full py-1 px-3 hover:shadow-lx hover:border-cyan-400 hover:text-cyan-400">Index
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 stroke-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                        </a>
-                    </li>
-                    <li class="m-2">
-                        <a href="#mapping" class="flex text-white bg-sky-500 border-white justify-end duration-500 text-md font-bold transform hover:scale-125 border-2 hover:bg-gray-300 rounded-full py-1 px-3 hover:shadow-lx hover:border-cyan-400 hover:text-cyan-400">Mapping
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 stroke-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>                      
-                        </a>
-                    <li class="m-2 mr-6">
-                        <a href="#contact" class="flex text-white bg-sky-500 border-white justify-end duration-500 text-md font-bold transform hover:scale-125 border-2 hover:bg-gray-300 rounded-full py-1 px-3 hover:shadow-lx hover:border-cyan-400 hover:text-cyan-400">Contact
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" /></svg>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <script src="./Develop/js/script.js"></script>
+<body class="bg-gradient-to-b from-white to-blue-50" >
+    <!-- Header -->
+    <header>
+        <!-- Navbar -->
         
+        <nav class="drop-shadow-md justify-between border-y-4 border-teal-100 pl-8 bg-gradient-to-b from-sky-600 to-sky-300 flex flex-col items-center  mt-0 md:flex-row">
+            <span class="font-Poppins drop-shadow-xl"><img class="h-8 inline drop-shadow-xl" src="./Develop/imgs/pngwing.com.png" alt="co2"><a class="text-teal-100 font-bold text-2xl duration-500 drop-shadow-xl underline " href="main.html"> AirPollution.com</a> </span>
+            <!-- Nav Ul -->
+            <ul class="md:flex md:items-center">
+                <li class="m-2">
+                    <a href="#about" class="flex text-white bg-sky-500 border-white justify-end duration-500 text-md font-bold transform hover:scale-125 border-2 hover:bg-gray-300 rounded-full py-1 px-3 hover:shadow-lx hover:border-cyan-400 hover:text-cyan-400">About
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 stroke-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                          </svg>
+                    </a>
+                </li>
+                <li class="m-2">
+                    <a href="#pollution" class="flex text-white bg-sky-500 border-white justify-end duration-500 text-md font-bold transform hover:scale-125 border-2 hover:bg-gray-300 rounded-full py-1 px-3 hover:shadow-lx hover:border-cyan-400 hover:text-cyan-400">Pollutons
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 stroke-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>                    
+                    </a>
+                  <li class="m-2">
+                    <a href="#index" class="flex text-white bg-sky-500 border-white justify-end duration-500 text-md font-bold transform hover:scale-125 border-2 hover:bg-gray-300 rounded-full py-1 px-3 hover:shadow-lx hover:border-cyan-400 hover:text-cyan-400">Index
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 stroke-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    </a>
+                </li>
+                <li class="m-2">
+                    <a href="#mapping" class="flex text-white bg-sky-500 border-white justify-end duration-500 text-md font-bold transform hover:scale-125 border-2 hover:bg-gray-300 rounded-full py-1 px-3 hover:shadow-lx hover:border-cyan-400 hover:text-cyan-400">Mapping
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 stroke-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>                      
+                    </a>
+                </li>
+                <li class="m-2 mr-6">
+                    <a href="#contact" class="flex text-white bg-sky-500 border-white justify-end duration-500 text-md font-bold transform hover:scale-125 border-2 hover:bg-gray-300 rounded-full py-1 px-3 hover:shadow-lx hover:border-cyan-400 hover:text-cyan-400">Contact
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" /></svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-        <div class="content drop-shadow-md mt-6 mb-10 border-y-4 border-teal-100 bg-sky-500 ">
-            <div class="container flex flex-col md:flex-row items-center my-4 ">
-                <!--left Col-->
-                <div class="container mx-auto flex flex-col md:flex-row items-center my-0 md:my-2 ">
-                    <div class="w-full lg:w-1/2 lg:py-14 pl-6 text-center">
-                        <div id='map' class="h-96 w-full rounded-lg shadow-2xl"></div>
-                    </div>
-    
-                
-                
-            
-                <div class=" justify-center items-start pt-2 pb-2 pl-12">                
-                    <h1 class="font-bold font-sans text-4xl mt-2 text-white text-shadow-md tracking-wide">Check Your Air Quality</h1>
-                    <form action="index.html" class="flex flex-wrap">  
-                        <input id="input" class="bg-gray-100 text-center text-gray-500 border-2 w-72 border-teal-100 rounded-l-3xl py-2 px-4 mt-16 ml-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 " type="text" placeholder="ZIP Code or City"> <br>
-                        <button class="flex mt-16 text-teal-100 bg-sky-500 border-teal-100 justify-end duration-500 text-md font-bold transform hover:scale-125 border-2 hover:bg-gray-300 rounded-r-full py-2 px-3 hover:shadow-mdhover:border-cyan-400 hover:text-cyan-400 h-10" onclick="window.location.href = './index.html';" type="submit" id="button">Submit
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 stroke-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg></button>
-                    </form>
-                </div>       
+
+    <!-- Content -->
+    <div class="content drop-shadow-md h-2/5 mt-6 mb-10 border-y-4 border-teal-100 bg-sky-500 ">
+        <div class="container flex flex-col md:flex-row ml-4 my-4 ">
+            <!--left Col-->
+            <div class="imgHover relative">             
+                <!--image--> 
+                <img class="img-hover rounded-xl shadow-2xl mt-8" src="./Develop/imgs/ezgif.com-gif-maker.gif" width="100%" 
+                height="" alt="Air Pollution">
+                <img class=" rounded-xl shadow-2xl mt-8" src="./Develop/imgs/ezgif.com-gif-maker (1).gif"  width="100%" alt="Clean Air">
             </div>
+
+            <!--right Col / Search Funtion-->
+            <div class="flex flex-col justify-center items-start pt-2 pb-2 pl-12">                
+                <h1 class="font-bold font-sans text-4xl mt-10 text-yellow-300 text-shadow-md tracking-wide">Check Your Air Quality</h1>
+                <form action="mapping.html" class="flex flex-wrap">  
+                    <input id="input" class="bg-gray-100 text-center text-gray-500 border-2 w-72 border-teal-100 rounded-l-3xl py-2 px-4 mt-16 ml-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 " type="text" placeholder="ZIP Code or City"> <br>
+                    <button class="flex mt-16 text-teal-100 bg-sky-500 border-teal-100 justify-end duration-500 text-md font-bold transform hover:scale-125 border-2 hover:bg-gray-300 rounded-r-full py-2 px-3 hover:shadow-mdhover:border-cyan-400 hover:text-cyan-400 h-10" onclick="window.location.href = './mapping.html';" type="submit" id="polCheck">Submit
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 stroke-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg></button>
+                </form>
+            </div>       
         </div>
+    </div>
+
+    <section class="mb-10 grid lg:grid-cols-2">
+        <div class="col-span-1 border-y-4 border-yellow-400 overflow-hidden shadow-md max-w-9/12 bg-gradient-to-r from-sky-300 to-sky-200">            
+            <h1 class="font-bold text-3xl text-white font-sans pl-8 p-3">Clean Air Benefits Us All</h1>
+            <img src="./Develop/imgs/family.jpg" alt=" " class="pd-4 w-full h-60 object-cover"> 
+        </div>
+        <div class="mr-2 border-4 border-yellow-400 border-dashed rounded-r-full bg-sky-500 drop-shadow-md">
+            <h1 class="font-bold text-3xl font-sans m-4 pl-4 text-cyan-100">About Us</h1>
+            <p class="font-semibold text-lg text-white pl-8">Health begins with knowledge. </br>Our environment has affects.</br>We provide an instant and accurate air quality report.  </br>Our color-coded index is easy to read.  Go ahead and check your local air.</br>We provide an instant and accurate air quality report.</p>    
+            <svg xmlns="http://www.w3.org/2000/svg" class="flex ml-12 p-1 text-white h-24 w-24 stroke-1 fill-red-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+        </div>
+    </section>
+    <section class="mb-10 grid lg:grid-cols-2">   
+        <div class="col-span-1 border-y-4 border-yellow-400 overflow-hidden shadow-md max-w-9/12 bg-gradient-to-r from-sky-300 to-sky-200">            
+            <h1 class="font-bold text-3xl text-white font-sans pl-8 p-3">Common Air Pollutons</h1>
+            <img src="./Develop/imgs/chemist.jpg" alt=" " class="pd-4 w-full h-60 object-cover" >
+        </div>
+        <div class="mr-2 border-4 border-yellow-400 border-dashed rounded-r-full bg-sky-500 drop-shadow-md">
+            <h1 class="font-bold text-3xl font-sans m-4 pl-4 text-cyan-100">Pollutons</h1>
+            <p class="font-semibold text-lg text-white pl-8">CO: Carbon Monoxide,  NO: Nitrc Oxide</br>NO2: Nitrogen Dioxide, O3: Trioxygen</br>SO2: Sulfur Dioxide, PM2.5: Fine particle matter</br>PM10: Particle matter, NH3: Ammonium +</br>& UV rays</p>    
+            <svg xmlns="http://www.w3.org/2000/svg" class="flex ml-12 p-1 text-white h-24 w-24 stroke-1 fill-emerald-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>        
+        </div>
+    </section>
+    
+    <section class="mb-10 grid lg:grid-cols-2">
+        <div class="col-span-1  border-y-4 border-yellow-400 overflow-hidden shadow-md max-w-9/12 bg-gradient-to-r from-sky-300 to-sky-200">            
+            <h1 class="font-bold text-3xl text-white font-sans pl-8 p-3">Real Time Mapping</h1>
+            <img src="./Develop/imgs/world.jpg" alt=" " class="pd-4 w-full h-60 object-cover">
+            
+        </div>
+        <div class="mr-2 border-4 border-yellow-400 border-dashed rounded-r-full bg-sky-500 drop-shadow-2xl">
+            <h1 class="font-bold text-3xl font-sans m-4 pl-4 text-cyan-100">Mapping</h1>
+            <p class="font-semibold text-lg text-white pl-8">Track your location in real time.</br> Find out about Smog, Wildfires,</br>Dust, Pollen, Particle matters,</br>Chemical compositions;</br>make sure you stay inform</p>    
+            <svg xmlns="http://www.w3.org/2000/svg" class="flex ml-12 p-1 text-white h-24 w-24 stroke-1 fill-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>          
+        </div>    
+    </section>
+    
+    <section class="mb-10 grid lg:grid-cols-12">
+        <div class="col-span-9 border-y-4 border-yellow-400 overflow-hidden shadow-md max-w-9/12 bg-gradient-to-b from-sky-600 to-sky-50">            
+            <img src="./Develop/imgs/index.jpg" alt=" " class="w-full h-auto object-cover">
+        </div>
+        <div class="col-span-3 mr-2 border-4 border-yellow-400 border-dashed rounded-r-full bg-sky-500 drop-shadow-md">
+            <h1 class="font-bold text-3xl font-sans m-4 pl-4 text-cyan-100">Index</h1>
+            <div class="mt-4">      
+                <p class="py-1 px-3 m-1 w-52 font-extrabold text-2xl text-green-700 rounded-full bg-green-300 ">GREEN:GOOD</p>
+                <p class="py-1 px-3 m-1 w-52 font-extrabold text-2xl text-yellow-500 rounded-full bg-yellow-200" >YELLOW:FAIR</p>
+                <p class="py-1 px-3 m-1 w-52 font-extrabold text-2xl text-orange-600 rounded-full bg-orange-200" >ORANGE:POOR</p>
+                <p class="py-1 px-3 m-1 w-52 font-extrabold text-2xl text-red-700 rounded-full bg-red-200" >RED:BAD</p>
+                <p class="py-1 px-3 m-1 w-52 font-extrabold text-2xl text-fuchsia-600 rounded-full bg-fuchsia-200" >VIOLET:AWFUL</p>
+                <p class="py-1 px-3 m-1 w-52 font-extrabold text-2xl bg-rose-500 rounded-full text-rose-900" >PURPLE:DANGER</p></div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="flex ml-12 p-1 text-white h-24 w-24 stroke-1 fill-orange-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>        
+        </div>
+    </section>
+
+ 
+    
+    <section id="reach-out" class="gridlg:grid-cols-2 mb-24 border-y-4 border-yellow-400 drop-shadow-md">
+        <div class="col-span-1">
+              <h2 class="section-title secondary-border">Let us know how we're doing</h2></div>
+        <div class="contact-info">
+            <img class="h-8 inline drop-shadow-xl" src="./Develop/imgs/pngwing.com.png" alt="co2"><a class="text-teal-100 font-bold text-2xl duration-500 drop-shadow-xl underline " href="main.html"> Air Pollution</a> 
+            <p>Any questions or concerns?<br/>Let us know and we'll be happy to talk to you!</p>
+            <address>
+                1234 Ole Town Rd <br/>
+                Riverside, CA <br/>
+                92510<br/>
+                P: 951.555.AIRZ (951.555.2477)<br/>
+                E: <a href="mailto:info@AirPollution.io">info@AirPollution.io</a>
+            </address>
         </div>
       
-
-    <div class="border-y-4 py-2 border-yellow-500 lg:grid-cols-2 bg-gradient-to-r from-orange-500 to-orange-300 text-white mb-40 drop-shadow-md ">
-        <div id="test-data" class="col-span-1 w-96 font-extrabold text-3xl text-center font-sans"> 
-        <p id="component-data" class="text-left w-96 text-xl col-span-1 font-semibold"></p>                 
+        <div class="col-span-1">
+            <h3>Contact Us</h3>
+            <form>
+                <label for="contact-name">Your Name</label>
+                <input type="text" id="contact-name" placeholder="Your Name" />
+              
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" placeholder="Message"></textarea>
+              
+                <button type="submit">Submit</button>
+            </form>
         </div>
-
+              
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12182.30520634488!2d-74.0652613!3d40.2407219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1561060983193!5m2!1sen!2sus"
+                frameborder="0" style="border:0" allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+      
+    
         <!-- Footer -->
-        <footer class=" pb-0 fixed bottom-0 w-full inset-x-0 bottom-0p-5 bg-gradient-to-r from-cyan-500 to-blue-500">
-            <div class="max-w-2xl mx-auto">
-
-                <hr class="h-px mt-0 bg-gray-500 opacity-40 border-none">
-
-                <div class="flex flex-col items-center justify-between mt-3 md:flex-row">
-                    <div>
-                        <a href="#"><span class="text-2xl font-Poppins font-bold cursor-pointer"><img
-                                    class="h-10 inline mr-3" src="./Develop/imgs/pngwing.com.png" alt="co2">Air
-                                Pollution</span></a>
-                    </div>
-
-                    <ul class="md:flex md:items-center">
-                        <li class="mx-4 my-0 md:my-0">
-                            <a href="#stayInformed" class="text-xl hover:text-cyan-400 duration-500">Stay Informed</a>
-                        </li>
-                        <li class="mx-7 my-0 md:my-0">
-                            <a href="#aboutUs" class="text-xl hover:text-cyan-400 duration-500">About Us</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-    </div>
-    </div>
-    </footer>
-
-    <!-- Footer -->
     <footer class="fixed bottom-0 w-full bg-gradient-to-r from-cyan-500 to-blue-500">
         <nav class="justify-between border-y-4 border-teal-100 pl-8 bg-gradient-to-b from-sky-600 to-sky-300 flex flex-col items-center  mt-0 md:flex-row">
             <span class="font-Poppins font-semibold text-white drop-shadow-xl">❤️Made with love by<img class="h-8 inline drop-shadow-xl" src="./Develop/imgs/pngwing.com.png" alt="co2"><a class="text-teal-100 font-bold text-2xl duration-500 drop-shadow-xl underline " href="main.html"> Air Pollution</a> </span>
@@ -133,11 +189,5 @@
         </nav>
         <script src="./Develop/js/air-quality.js"></script>
     </footer>
-    
-    <!-- Scripts -->
-        <script src="./Develop/js/main.js"></script>
-    </div>
 </body>
-
-</html> 
-
+</html>
