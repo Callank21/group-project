@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 .content {
-    padding: 0 2% 0 2%;
+    padding: 0 0% 0 0%;
 }
 
 .img {
-    padding: 0 2% 0 2%;
+    padding: 0 0% 0 0%;
    
 }
 
