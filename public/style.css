@@ -1,6 +1,11 @@
 /*
 ! tailwindcss v3.0.23 | MIT License | https://tailwindcss.com
+<<<<<<< HEAD
 *//*
+=======
+*/
+/*
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
@@ -8,10 +13,21 @@
 *,
 ::before,
 ::after {
+<<<<<<< HEAD
   box-sizing: border-box; /* 1 */
   border-width: 0; /* 2 */
   border-style: solid; /* 2 */
   border-color: #e5e7eb; /* 2 */
+=======
+  box-sizing: border-box;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: #e5e7eb;
+  /* 2 */
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 }
 
 ::before,
@@ -27,12 +43,26 @@
 */
 
 html {
+<<<<<<< HEAD
   line-height: 1.5; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
   -moz-tab-size: 4; /* 3 */
   -o-tab-size: 4;
      tab-size: 4; /* 3 */
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
+=======
+  line-height: 1.5;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+  tab-size: 4;
+  /* 3 */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* 4 */
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 }
 
 /*
@@ -41,8 +71,15 @@ html {
 */
 
 body {
+<<<<<<< HEAD
   margin: 0; /* 1 */
   line-height: inherit; /* 2 */
+=======
+  margin: 0;
+  /* 1 */
+  line-height: inherit;
+  /* 2 */
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 }
 
 /*
@@ -52,9 +89,18 @@ body {
 */
 
 hr {
+<<<<<<< HEAD
   height: 0; /* 1 */
   color: inherit; /* 2 */
   border-top-width: 1px; /* 3 */
+=======
+  height: 0;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  border-top-width: 1px;
+  /* 3 */
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 }
 
 /*
@@ -63,7 +109,11 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 
 abbr:where([title]) {
   -webkit-text-decoration: underline dotted;
+<<<<<<< HEAD
           text-decoration: underline dotted;
+=======
+  text-decoration: underline dotted;
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 }
 
 /*
@@ -107,8 +157,15 @@ code,
 kbd,
 samp,
 pre {
+<<<<<<< HEAD
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
   font-size: 1em; /* 2 */
+=======
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 }
 
 /*
@@ -146,9 +203,18 @@ sup {
 */
 
 table {
+<<<<<<< HEAD
   text-indent: 0; /* 1 */
   border-color: inherit; /* 2 */
   border-collapse: collapse; /* 3 */
+=======
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+  border-collapse: collapse;
+  /* 3 */
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 }
 
 /*
@@ -162,12 +228,27 @@ input,
 optgroup,
 select,
 textarea {
+<<<<<<< HEAD
   font-family: inherit; /* 1 */
   font-size: 100%; /* 1 */
   line-height: inherit; /* 1 */
   color: inherit; /* 1 */
   margin: 0; /* 2 */
   padding: 0; /* 3 */
+=======
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
+  color: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+  /* 3 */
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 }
 
 /*
@@ -188,9 +269,18 @@ button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
+<<<<<<< HEAD
   -webkit-appearance: button; /* 1 */
   background-color: transparent; /* 2 */
   background-image: none; /* 2 */
+=======
+  -webkit-appearance: button;
+  /* 1 */
+  background-color: transparent;
+  /* 2 */
+  background-image: none;
+  /* 2 */
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 }
 
 /*
@@ -232,8 +322,15 @@ Correct the cursor style of increment and decrement buttons in Safari.
 */
 
 [type='search'] {
+<<<<<<< HEAD
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
+=======
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 }
 
 /*
@@ -250,8 +347,15 @@ Remove the inner padding in Chrome and Safari on macOS.
 */
 
 ::-webkit-file-upload-button {
+<<<<<<< HEAD
   -webkit-appearance: button; /* 1 */
   font: inherit; /* 2 */
+=======
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 }
 
 /*
@@ -312,6 +416,7 @@ textarea {
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
 
+<<<<<<< HEAD
 input::-moz-placeholder, textarea::-moz-placeholder {
   opacity: 1; /* 1 */
   color: #9ca3af; /* 2 */
@@ -320,12 +425,35 @@ input::-moz-placeholder, textarea::-moz-placeholder {
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   opacity: 1; /* 1 */
   color: #9ca3af; /* 2 */
+=======
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 }
 
 input::placeholder,
 textarea::placeholder {
+<<<<<<< HEAD
   opacity: 1; /* 1 */
   color: #9ca3af; /* 2 */
+=======
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 }
 
 /*
@@ -358,8 +486,15 @@ audio,
 iframe,
 embed,
 object {
+<<<<<<< HEAD
   display: block; /* 1 */
   vertical-align: middle; /* 2 */
+=======
+  display: block;
+  /* 1 */
+  vertical-align: middle;
+  /* 2 */
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 }
 
 /*
@@ -380,7 +515,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
+<<<<<<< HEAD
 *, ::before, ::after {
+=======
+*,
+::before,
+::after {
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
   --tw-translate-x: 0;
   --tw-translate-y: 0;
   --tw-rotate: 0;
@@ -388,6 +529,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-skew-y: 0;
   --tw-scale-x: 1;
   --tw-scale-y: 1;
+<<<<<<< HEAD
   --tw-pan-x:  ;
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
@@ -398,6 +540,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-numeric-spacing:  ;
   --tw-numeric-fraction:  ;
   --tw-ring-inset:  ;
+=======
+  --tw-pan-x: ;
+  --tw-pan-y: ;
+  --tw-pinch-zoom: ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-ordinal: ;
+  --tw-slashed-zero: ;
+  --tw-numeric-figure: ;
+  --tw-numeric-spacing: ;
+  --tw-numeric-fraction: ;
+  --tw-ring-inset: ;
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
   --tw-ring-color: rgb(59 130 246 / 0.5);
@@ -405,6 +559,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
+<<<<<<< HEAD
   --tw-blur:  ;
   --tw-brightness:  ;
   --tw-contrast:  ;
@@ -427,84 +582,175 @@ Ensure the default browser behavior of the `hidden` attribute.
 .container {
   width: 100%;
 }
+=======
+  --tw-blur: ;
+  --tw-brightness: ;
+  --tw-contrast: ;
+  --tw-grayscale: ;
+  --tw-hue-rotate: ;
+  --tw-invert: ;
+  --tw-saturate: ;
+  --tw-sepia: ;
+  --tw-drop-shadow: ;
+  --tw-backdrop-blur: ;
+  --tw-backdrop-brightness: ;
+  --tw-backdrop-contrast: ;
+  --tw-backdrop-grayscale: ;
+  --tw-backdrop-hue-rotate: ;
+  --tw-backdrop-invert: ;
+  --tw-backdrop-opacity: ;
+  --tw-backdrop-saturate: ;
+  --tw-backdrop-sepia: ;
+}
+
+.container {
+  width: 100%;
+}
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 @media (min-width: 640px) {
 
   .container {
     max-width: 640px;
   }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 @media (min-width: 768px) {
 
   .container {
     max-width: 768px;
   }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 @media (min-width: 1024px) {
 
   .container {
     max-width: 1024px;
   }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 @media (min-width: 1280px) {
 
   .container {
     max-width: 1280px;
   }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 @media (min-width: 1536px) {
 
   .container {
     max-width: 1536px;
   }
 }
+<<<<<<< HEAD
 .fixed {
   position: fixed;
 }
 .relative {
   position: relative;
 }
+=======
+
+.fixed {
+  position: fixed;
+}
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .inset-x-0 {
   left: 0px;
   right: 0px;
 }
+<<<<<<< HEAD
 .bottom-0 {
   bottom: 0px;
 }
 .m-4 {
   margin: 1rem;
 }
+=======
+
+.bottom-0 {
+  bottom: 0px;
+}
+
+.m-4 {
+  margin: 1rem;
+}
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .mx-1 {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .mx-7 {
   margin-left: 1.75rem;
   margin-right: 1.75rem;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .my-12 {
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
+<<<<<<< HEAD
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -559,57 +805,181 @@ Ensure the default browser behavior of the `hidden` attribute.
 .rounded {
   border-radius: 0.25rem;
 }
+=======
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-0 {
+  margin-top: 0px;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
+.inline {
+  display: inline;
+}
+
+.flex {
+  display: flex;
+}
+
+.h-10 {
+  height: 2.5rem;
+}
+
+.h-px {
+  height: 1px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.max-w-2xl {
+  max-width: 42rem;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .rounded-r-lg {
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
 }
+<<<<<<< HEAD
 .border {
   border-width: 1px;
 }
 .border-none {
   border-style: none;
 }
+=======
+
+.border {
+  border-width: 1px;
+}
+
+.border-none {
+  border-style: none;
+}
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .border-gray-900 {
   --tw-border-opacity: 1;
   border-color: rgb(17 24 39 / var(--tw-border-opacity));
 }
+<<<<<<< HEAD
 .bg-transparent {
   background-color: transparent;
 }
+=======
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .bg-gray-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
+<<<<<<< HEAD
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
+=======
+
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .from-cyan-500 {
   --tw-gradient-from: #06b6d4;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(6 182 212 / 0));
 }
+<<<<<<< HEAD
 .to-blue-500 {
   --tw-gradient-to: #3b82f6;
 }
+=======
+
+.to-blue-500 {
+  --tw-gradient-to: #3b82f6;
+}
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+<<<<<<< HEAD
 .pl-3 {
   padding-left: 0.75rem;
 }
@@ -628,26 +998,70 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-center {
   text-align: center;
 }
+=======
+
+.pl-3 {
+  padding-left: 0.75rem;
+}
+
+.pr-3 {
+  padding-right: 0.75rem;
+}
+
+.pt-2 {
+  padding-top: 0.5rem;
+}
+
+.pb-5 {
+  padding-bottom: 1.25rem;
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
+<<<<<<< HEAD
 .font-bold {
   font-weight: 700;
 }
@@ -657,28 +1071,56 @@ Ensure the default browser behavior of the `hidden` attribute.
 .leading-tight {
   line-height: 1.25;
 }
+=======
+
+.font-bold {
+  font-weight: 700;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.leading-tight {
+  line-height: 1.25;
+}
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .text-gray-900 {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .shadow-2xl {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+<<<<<<< HEAD
 .drop-shadow-xl {
   --tw-drop-shadow: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
+=======
+
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 .duration-500 {
   transition-duration: 500ms;
 }
 
 .content {
+<<<<<<< HEAD
     padding: 0 3% 0 3%;
 }
 
@@ -697,6 +1139,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .img-hover:hover {
     opacity: 1;   
+=======
+  padding: 0 3% 0 3%;
+}
+
+.img {
+  padding: 0 15% 0 15%;
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 }
 
 .hover\:border-transparent:hover {
@@ -708,9 +1157,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 
+<<<<<<< HEAD
 .hover\:text-cyan-400:hover {
   --tw-text-opacity: 1;
   color: rgb(34 211 238 / var(--tw-text-opacity));
+=======
+.hover\:text-cyan-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(6 182 212 / var(--tw-text-opacity));
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
 }
 
 .hover\:text-white:hover {
@@ -775,9 +1230,17 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 50%;
   }
 
+<<<<<<< HEAD
   .lg\:py-0 {
     padding-top: 0px;
     padding-bottom: 0px;
   }
 }
 
+=======
+  .lg\:py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+>>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
