@@ -1,4 +1,4 @@
-var submitButton = document.querySelector("#polCheck");
+var polCheck = document.querySelector("#polCheck");
 var submit = document.getElementById("submit");
 
 function searchQuery(query) {
@@ -39,9 +39,10 @@ if(submit) {
     });
 }
 
-if(submitButton) {
-    submitButton.addEventListener("click", function () {
+if(polCheck) {
+    polCheck.addEventListener("click", function () {
         var query = document.getElementById("input").value;
+        console.log(query);
         if (query) {
             searchQuery(query);
         }
