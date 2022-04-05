@@ -53,8 +53,6 @@ if(submitButton) {
 
 var previousSearches = JSON.parse(localStorage.getItem("drop-down"));
 
-
-console.log(previousSearches);
 searchQuery(previousSearches[0]);
 
 
