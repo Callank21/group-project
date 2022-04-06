@@ -100,7 +100,7 @@ var qualityEl = document.querySelector('#air-quality');
 var airQuality = {};
 
 function getAirQuality(lat, lon) {
-    var airPollutionUrl = 'https://api.openweathermap.org/data/2.5/air_pollution?lat=' + lat + '&lon=' + lon + '&appid=4ce1081bbd0cd6d45033a1dc8f18bcdf';
+    var airPollutionUrl = 'http://api.openweathermap.org/data/2.5/air_pollution?lat=' + lat + '&lon=' + lon + '&appid=4ce1081bbd0cd6d45033a1dc8f18bcdf';
 
     fetch(airPollutionUrl)
         .then(function (response) {
