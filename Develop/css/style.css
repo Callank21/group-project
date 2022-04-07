@@ -3,38 +3,21 @@
 @tailwind utilities;
 
 .content {
-<<<<<<< HEAD
     padding: 0 3% 0 3%;
 }
 
 .img {
     padding: 0 15% 0 15%;
-=======
-    padding: 0 0% 0 0%;
-}
-
-.img {
-    padding: 0 0% 0 0%;
->>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
    
 }
 
 .img-hover {
     position: absolute;
-<<<<<<< HEAD
-    padding-top: ;
-=======
-    padding-top:0 ;
->>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
     top: 0;
     opacity: 0;
     transition: all 0.7s ease;
 }
 
-<<<<<<< HEAD
 .img-hover:hover {
     opacity: 1;   
 }
-=======
->>>>>>> 115bde294ffeca30a1f4e20d3fecc230b99a5323
-
