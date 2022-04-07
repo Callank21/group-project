@@ -1,11 +1,10 @@
-var polCheck = document.getElementById("polCheck");
-var queryMap = document.getElementById("queryMap");
-var searchHistory = document.getElementById("searchHistory");
+var polCheck = document.getElementById("polCheck"); //button for the index page
+var queryMap = document.getElementById("queryMap");//button for the mapping page
+var searchHistory = document.getElementById("searchHistory"); //listener for button clicks in the searchHistory div on mapping.html
 
-var previousSearches = [];
-console.log(previousSearches.length);
+var previousSearches = []; //index where search results are saved
 
-function searchQuery(query) {
+function searchQuery(query) { // takes in a search query and sends it to the Mapbox API to then get longitude and latitude data; sends it to the map display function and the air quality data function
     previousSearches.splice(0,0,query); //this calls the history tab whenever a search query is input
     createHistory(previousSearches);
     query.replace(' ', '%20');
@@ -31,14 +30,14 @@ function createHistory(previousSearches) { //this creates the button and applies
     deleteHistory();
     localStorage.setItem("generalHistory", JSON.stringify(previousSearches));
     console.log(previousSearches.length);
-    if (previousSearches.length < 6) {
+    if (previousSearches.length < 6) { //generates more buttons if there is less than 6 in the searchHistory div
         for(var i =0; i < previousSearches.length || 0; i++) {
             var button = document.createElement("button");
             searchHistory.appendChild(button);
             button.textContent = previousSearches[i];
         }
     }
-    else if (previousSearches.length >= 6) {
+    else if (previousSearches.length >= 6) { // if there are more than 6, this deletes the last button then generates the new resulting buttons
         previousSearches.length = 5;
         for(var i =0; i < previousSearches.length || 0; i++) {
             var button = document.createElement("button");
@@ -56,7 +55,7 @@ function deleteHistory() { //this deletes the history tab whenever a new result 
     }
 }
 
-function setUpMap(lat, lon) {
+function setUpMap(lat, lon) { //this writes the map object to the page
     mapboxgl.accessToken = 'pk.eyJ1IjoiY2FsbGFuazIxIiwiYSI6ImNsMWJiZnA0cjJyMG0zam4xMTF6MHdndmYifQ.lZAx_bYFPQmZDlkT3b8Daw';
     const map = new mapboxgl.Map({
         container: 'map', // container ID
@@ -66,7 +65,7 @@ function setUpMap(lat, lon) {
     });
 }
 
-if(polCheck) {
+if(polCheck) { //this listens to the first button on the first page and when it is clicked, saves the result to local storage
     polCheck.addEventListener("click", function(event) {
         event.preventDefault();
         var search = document.getElementById("indexCheck").value;
@@ -75,7 +74,7 @@ if(polCheck) {
     });
 }
 
-if(queryMap) {
+if(queryMap) { //this listens to the search button on the second page, and sends the query to the map set up functions, if they put nothing in it defaults to los angeles
     queryMap.addEventListener("click", function(event) {
         event.preventDefault();
         var query = document.getElementById("setMap").value;
@@ -89,15 +88,16 @@ if(queryMap) {
     });
 }
 
+
 searchHistory.addEventListener("click", function(event) { //this listens to the history div for when it its clicked
     searchQuery(event.target.textContent);
 })
 
-var firstSearch = JSON.parse(localStorage.getItem("firstSearch"));
+var firstSearch = JSON.parse(localStorage.getItem("firstSearch")); //this writes the result from the first page into a variable
 var historySearch = [];
-historySearch = previousSearches.splice(0,0,JSON.parse(localStorage.getItem("generalHistory"))); //this generates the history underneath the search bar when the screen loads
+historySearch = previousSearches.splice(0,0,JSON.parse(localStorage.getItem("generalHistory"))); //this stores the search result from the first page into the search history
 
-if (historySearch.length < 6) {
+if (historySearch.length < 6) { //this generates the history underneath the search bar when the screen loads
     for(var i = 0; i < historySearch.length || 0; i++){
         searchQuery(historySearch[i]);
     }
@@ -108,20 +108,20 @@ else if (historySearch.length >= 6) {
         searchQuery(historySearch[i]);
     }
 } 
-searchQuery(firstSearch);
+searchQuery(firstSearch); //this inputs the search result from the first page when the second page loads
 
 // Start of Air Pollution API
 
-var aqiDef = ["good", "fair", "moderate", "poor", "very poor"];
+var aqiDef = ["good", "fair", "moderate", "poor", "very poor"]; //air quality definitions to be displayed above the data set
 
-var dataEl = document.querySelector('#test-data');
+var dataEl = document.querySelector('#test-data'); //all display data from the result to these specific html sections
 var componentsEl = dataEl.querySelector('#component-data');
 
 var qualityEl = document.querySelector('#air-quality');
 
 var airQuality = {};
 
-function getAirQuality(lat, lon) {
+function getAirQuality(lat, lon) { //takes latitude longitude data and fetches data on that region from OpenWeather API
     var airPollutionUrl = 'https://api.openweathermap.org/data/2.5/air_pollution?lat=' + lat + '&lon=' + lon + '&appid=4ce1081bbd0cd6d45033a1dc8f18bcdf';
 
     fetch(airPollutionUrl)
@@ -138,7 +138,7 @@ function getAirQuality(lat, lon) {
         })
 }
 
-function displayData(data) {
+function displayData(data) { //writes the data to the html
     if(data.list.length){
         for (let i = 0; i < data.list.length; i++) {
             airQuality.quality = (aqiDef[data.list[i].main.aqi - 1]);
