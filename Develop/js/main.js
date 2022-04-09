@@ -39,7 +39,7 @@ function createHistory(previousSearches) { //this creates the button and applies
     }
     else if (previousSearches.length >= 6) { // if there are more than 6, this deletes the last button then generates the new resulting buttons
         previousSearches.length = 5;
-        for(var i =0; i < previousSearches.length || 0; i++) {
+        for (var i = 0; i < previousSearches.length || 0; i++) {
             var button = document.createElement("button");
             searchHistory.appendChild(button);
             button.textContent = previousSearches[i];
@@ -103,7 +103,7 @@ if (historySearch.length < 6) { //this generates the history underneath the sear
 }
 else if (historySearch.length >= 6) {
     historySearch.length = 5;
-    for(var i = 0; i < historySearch.length || 0; i++){
+    for (var i = 0; i < historySearch.length || 0; i++) {
         searchQuery(historySearch[i]);
     }
 } 
@@ -117,6 +117,7 @@ var dataEl = document.querySelector('#test-data'); //all display data from the r
 var componentsEl = dataEl.querySelector('#component-data');
 
 var qualityEl = document.querySelector('#air-quality');
+var aqiColor = document.querySelector("#aqi-color");
 
 var airQuality = {};
 
@@ -142,9 +143,28 @@ function displayData(data) { //writes the data to the html
         for (let i = 0; i < data.list.length; i++) {
             airQuality.quality = (aqiDef[data.list[i].main.aqi - 1]);
             airQuality.components = data.list[i].components;
-    
+
+            switch (airQuality.quality) {
+                case "good":
+                    aqiColor.style.backgroundColor = "green";
+                    break;
+                case "fair":
+                    aqiColor.style.backgroundColor = "yellow";
+                    aqiColor.style.color = "black";
+                    break;
+                case "moderate":
+                    aqiColor.style.backgroundColor = "orange";
+                    break;
+                case "poor":
+                    aqiColor.style.backgroundColor = "red";
+                    break;
+                case "very poor":
+                    aqiColor.style.backgroundColor = "purple";
+                    break;
+            }
+
             qualityEl.textContent = airQuality.quality;
-    
+
             var componentHtml =
                 "<li><span> CO:</span> " + airQuality.components.co + "</li>" +
                 "<li><span> NO:</span> " + airQuality.components.no + "</li>" +
@@ -154,7 +174,7 @@ function displayData(data) { //writes the data to the html
                 "<li><span> PM<sub>2.5</sub>:</span> " + airQuality.components.pm2_5 + "</li>" +
                 "<li><span> PM<sub>10</sub>:</span> " + airQuality.components.pm10 + "</li>" +
                 "<li><span> NH<sub>3</sub>:</span> " + airQuality.components.nh3 + "</li>";
-    
+
             componentsEl.innerHTML = componentHtml;
         }
     }
