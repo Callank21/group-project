@@ -6,7 +6,7 @@ var previousSearches = [];
 console.log(previousSearches.length);
 
 function searchQuery(query) {
-    previousSearches.splice(0,0,query); //this calls the history tab whenever a search query is input
+    previousSearches.splice(0, 0, query); //this calls the history tab whenever a search query is input
     createHistory(previousSearches);
     query.replace(' ', '%20');
     var location = `https://api.mapbox.com/geocoding/v5/mapbox.places/${query}.json?proximity=ip&types=place%2Cpostcode%2Caddress&access_token=pk.eyJ1IjoiY2FsbGFuazIxIiwiYSI6ImNsMWJiZnA0cjJyMG0zam4xMTF6MHdndmYifQ.lZAx_bYFPQmZDlkT3b8Daw`;
@@ -32,7 +32,7 @@ function createHistory(previousSearches) { //this creates the button and applies
     localStorage.setItem("generalHistory", JSON.stringify(previousSearches));
     console.log(previousSearches.length);
     if (previousSearches.length < 6) {
-        for(var i =0; i < previousSearches.length || 0; i++) {
+        for (var i = 0; i < previousSearches.length || 0; i++) {
             var button = document.createElement("button");
             searchHistory.appendChild(button);
             button.textContent = previousSearches[i];
@@ -40,7 +40,7 @@ function createHistory(previousSearches) { //this creates the button and applies
     }
     else if (previousSearches.length >= 6) {
         previousSearches.length = 5;
-        for(var i =0; i < previousSearches.length || 0; i++) {
+        for (var i = 0; i < previousSearches.length || 0; i++) {
             var button = document.createElement("button");
             searchHistory.appendChild(button);
             button.textContent = previousSearches[i];
@@ -66,8 +66,8 @@ function setUpMap(lat, lon) {
     });
 }
 
-if(polCheck) {
-    polCheck.addEventListener("click", function(event) {
+if (polCheck) {
+    polCheck.addEventListener("click", function (event) {
         event.preventDefault();
         var search = document.getElementById("indexCheck").value;
 
@@ -75,8 +75,8 @@ if(polCheck) {
     });
 }
 
-if(queryMap) {
-    queryMap.addEventListener("click", function(event) {
+if (queryMap) {
+    queryMap.addEventListener("click", function (event) {
         event.preventDefault();
         var query = document.getElementById("setMap").value;
 
@@ -89,25 +89,25 @@ if(queryMap) {
     });
 }
 
-searchHistory.addEventListener("click", function(event) { //this listens to the history div for when it its clicked
+searchHistory.addEventListener("click", function (event) { //this listens to the history div for when it its clicked
     searchQuery(event.target.textContent);
 })
 
 var firstSearch = JSON.parse(localStorage.getItem("firstSearch"));
 var historySearch = [];
-historySearch = previousSearches.splice(0,0,JSON.parse(localStorage.getItem("generalHistory"))); //this generates the history underneath the search bar when the screen loads
+historySearch = previousSearches.splice(0, 0, JSON.parse(localStorage.getItem("generalHistory"))); //this generates the history underneath the search bar when the screen loads
 
 if (historySearch.length < 6) {
-    for(var i = 0; i < historySearch.length || 0; i++){
+    for (var i = 0; i < historySearch.length || 0; i++) {
         searchQuery(historySearch[i]);
     }
 }
 else if (historySearch.length >= 6) {
     historySearch.length = 5;
-    for(var i = 0; i < historySearch.length || 0; i++){
+    for (var i = 0; i < historySearch.length || 0; i++) {
         searchQuery(historySearch[i]);
     }
-} 
+}
 searchQuery(firstSearch);
 
 // Start of Air Pollution API
@@ -118,6 +118,7 @@ var dataEl = document.querySelector('#test-data');
 var componentsEl = dataEl.querySelector('#component-data');
 
 var qualityEl = document.querySelector('#air-quality');
+var aqiColor = document.querySelector("#aqi-color");
 
 var airQuality = {};
 
@@ -139,13 +140,32 @@ function getAirQuality(lat, lon) {
 }
 
 function displayData(data) {
-    if(data.list.length){
+    if (data.list.length) {
         for (let i = 0; i < data.list.length; i++) {
             airQuality.quality = (aqiDef[data.list[i].main.aqi - 1]);
             airQuality.components = data.list[i].components;
-    
+
+            switch (airQuality.quality) {
+                case "good":
+                    aqiColor.style.backgroundColor = "green";
+                    break;
+                case "fair":
+                    aqiColor.style.backgroundColor = "yellow";
+                    aqiColor.style.color = "black";
+                    break;
+                case "moderate":
+                    aqiColor.style.backgroundColor = "orange";
+                    break;
+                case "poor":
+                    aqiColor.style.backgroundColor = "red";
+                    break;
+                case "very poor":
+                    aqiColor.style.backgroundColor = "purple";
+                    break;
+            }
+
             qualityEl.textContent = airQuality.quality;
-    
+
             var componentHtml =
                 "<li><span> CO:</span> " + airQuality.components.co + "</li>" +
                 "<li><span> NO:</span> " + airQuality.components.no + "</li>" +
@@ -155,7 +175,7 @@ function displayData(data) {
                 "<li><span> PM<sub>2.5</sub>:</span> " + airQuality.components.pm2_5 + "</li>" +
                 "<li><span> PM<sub>10</sub>:</span> " + airQuality.components.pm10 + "</li>" +
                 "<li><span> NH<sub>3</sub>:</span> " + airQuality.components.nh3 + "</li>";
-    
+
             componentsEl.innerHTML = componentHtml;
         }
     }
