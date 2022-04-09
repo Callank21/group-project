@@ -29,7 +29,6 @@ function createHistory(previousSearches) { //this creates the button and applies
     var searchHistory = document.getElementById("searchHistory");
     deleteHistory();
     localStorage.setItem("generalHistory", JSON.stringify(previousSearches));
-    console.log(previousSearches.length);
     if (previousSearches.length < 6) { //generates more buttons if there is less than 6 in the searchHistory div
         for(var i =0; i < previousSearches.length || 0; i++) {
             var button = document.createElement("button");
@@ -94,7 +93,7 @@ searchHistory.addEventListener("click", function(event) { //this listens to the 
 })
 
 var firstSearch = JSON.parse(localStorage.getItem("firstSearch")); //this writes the result from the first page into a variable
-var historySearch = JSON.parse(localStorage.getItem("generalHistory")); //this stores the search result from the first page into the search history
+var historySearch = JSON.parse(localStorage.getItem("generalHistory")) || []; //this stores the search result from the first page into the search history
 
 if (historySearch.length < 6) { //this generates the history underneath the search bar when the screen loads
     for(var i = 0; i < historySearch.length || 0; i++){
