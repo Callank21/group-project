@@ -94,8 +94,7 @@ searchHistory.addEventListener("click", function(event) { //this listens to the 
 })
 
 var firstSearch = JSON.parse(localStorage.getItem("firstSearch")); //this writes the result from the first page into a variable
-var historySearch = [];
-historySearch = previousSearches.splice(0,0,JSON.parse(localStorage.getItem("generalHistory"))); //this stores the search result from the first page into the search history
+var historySearch = JSON.parse(localStorage.getItem("generalHistory")); //this stores the search result from the first page into the search history
 
 if (historySearch.length < 6) { //this generates the history underneath the search bar when the screen loads
     for(var i = 0; i < historySearch.length || 0; i++){
