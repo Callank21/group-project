@@ -5,7 +5,7 @@ var searchHistory = document.getElementById("searchHistory"); //listener for but
 var previousSearches = []; //index where search results are saved
 
 function searchQuery(query) { // takes in a search query and sends it to the Mapbox API to then get longitude and latitude data; sends it to the map display function and the air quality data function
-    previousSearches.splice(0,0,query); //this calls the history tab whenever a search query is input
+    previousSearches.splice(0, 0, query); //this calls the history tab whenever a search query is input
     createHistory(previousSearches);
     query.replace(' ', '%20');
     var location = `https://api.mapbox.com/geocoding/v5/mapbox.places/${query}.json?proximity=ip&types=place%2Cpostcode%2Caddress&access_token=pk.eyJ1IjoiY2FsbGFuazIxIiwiYSI6ImNsMWJiZnA0cjJyMG0zam4xMTF6MHdndmYifQ.lZAx_bYFPQmZDlkT3b8Daw`;
@@ -30,7 +30,7 @@ function createHistory(previousSearches) { //this creates the button and applies
     deleteHistory();
     localStorage.setItem("generalHistory", JSON.stringify(previousSearches));
     if (previousSearches.length < 6) { //generates more buttons if there is less than 6 in the searchHistory div
-        for(var i =0; i < previousSearches.length || 0; i++) {
+        for (var i = 0; i < previousSearches.length || 0; i++) {
             var button = document.createElement("button");
             searchHistory.appendChild(button);
             button.textContent = previousSearches[i];
@@ -64,8 +64,8 @@ function setUpMap(lat, lon) { //this writes the map object to the page
     });
 }
 
-if(polCheck) { //this listens to the first button on the first page and when it is clicked, saves the result to local storage
-    polCheck.addEventListener("click", function(event) {
+if (polCheck) { //this listens to the first button on the first page and when it is clicked, saves the result to local storage
+    polCheck.addEventListener("click", function (event) {
         event.preventDefault();
         var search = document.getElementById("indexCheck").value;
 
@@ -73,8 +73,8 @@ if(polCheck) { //this listens to the first button on the first page and when it 
     });
 }
 
-if(queryMap) { //this listens to the search button on the second page, and sends the query to the map set up functions, if they put nothing in it defaults to los angeles
-    queryMap.addEventListener("click", function(event) {
+if (queryMap) { //this listens to the search button on the second page, and sends the query to the map set up functions, if they put nothing in it defaults to los angeles
+    queryMap.addEventListener("click", function (event) {
         event.preventDefault();
         var query = document.getElementById("setMap").value;
 
@@ -88,7 +88,7 @@ if(queryMap) { //this listens to the search button on the second page, and sends
 }
 
 
-searchHistory.addEventListener("click", function(event) { //this listens to the history div for when it its clicked
+searchHistory.addEventListener("click", function (event) { //this listens to the history div for when it its clicked
     searchQuery(event.target.textContent);
 })
 
@@ -96,7 +96,7 @@ var firstSearch = JSON.parse(localStorage.getItem("firstSearch")); //this writes
 var historySearch = JSON.parse(localStorage.getItem("generalHistory")) || []; //this stores the search result from the first page into the search history
 
 if (historySearch.length < 6) { //this generates the history underneath the search bar when the screen loads
-    for(var i = 0; i < historySearch.length || 0; i++){
+    for (var i = 0; i < historySearch.length || 0; i++) {
         searchQuery(historySearch[i]);
     }
 }
@@ -105,8 +105,7 @@ else if (historySearch.length >= 6) {
     for (var i = 0; i < historySearch.length || 0; i++) {
         searchQuery(historySearch[i]);
     }
-} 
-searchQuery(firstSearch); //this inputs the search result from the first page when the second page loads
+}
 
 // Start of Air Pollution API
 
@@ -138,7 +137,7 @@ function getAirQuality(lat, lon) { //takes latitude longitude data and fetches d
 }
 
 function displayData(data) { //writes the data to the html
-    if(data.list.length){
+    if (data.list.length) {
         for (let i = 0; i < data.list.length; i++) {
             airQuality.quality = (aqiDef[data.list[i].main.aqi - 1]);
             airQuality.components = data.list[i].components;
@@ -182,3 +181,5 @@ function displayData(data) { //writes the data to the html
 function displayError(error) {
     return error;
 }
+
+searchQuery(firstSearch); //this inputs the search result from the first page when the second page loads
